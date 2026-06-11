@@ -1,0 +1,32 @@
+# The LLMR Ecosystem
+
+> R packages for LLM-assisted research: one provider layer (LLMR) and a
+> methodology stack built on it. Each package ships a compact usage capsule
+> written for AI assistants: exact signatures, the canonical workflow, the
+> offline test seam, the rules that make the method valid, and what its
+> error messages mean. Read the capsule before generating code against a
+> package; it replaces many help-file lookups.
+
+## Usage capsules
+
+- [LLMR](https://asanaei.github.io/LLMR/ai/LLMR.md): unified provider layer — configs, calls, structured output, tools, streaming, logprobs, embeddings, tidy verbs, parallel/batch execution, logging, agreement, cost.
+- [LLMRAgent](https://asanaei.github.io/LLMRAgent/ai/LLMRAgent.md): agents with personas, tools, memory, hard budgets; delegation; multi-agent designs; experiments; orchestration.
+- [LLMRcoder](https://asanaei.github.io/LLMRcoder/ai/LLMRcoder.md): codebook-first annotation with sealed gold validation, locked protocols, tournaments, corpus coding, reports.
+- [LLMRvalid](https://asanaei.github.io/LLMRvalid/ai/LLMRvalid.md): robustness audits — the reported estimate recomputed across the measurement multiverse; fragility index.
+- [LLMRarchive](https://asanaei.github.io/LLMRarchive/ai/LLMRarchive.md): verifiable replication archives from audit logs; sealing, completeness linting, redaction, verifiability horizons.
+- [LLMRpanel](https://asanaei.github.io/LLMRpanel/ai/LLMRpanel.md): calibrated silicon samples — persona panels, instruments, conjoint/vignette designs, coverage-aware calibration, bias audits.
+
+## Per-package documentation indexes
+
+- [LLMR llms.txt](https://asanaei.github.io/LLMR/llms.txt)
+- [LLMRAgent llms.txt](https://asanaei.github.io/LLMRAgent/llms.txt)
+- [LLMRcoder llms.txt](https://asanaei.github.io/LLMRcoder/llms.txt)
+- [LLMRvalid llms.txt](https://asanaei.github.io/LLMRvalid/llms.txt)
+- [LLMRarchive llms.txt](https://asanaei.github.io/LLMRarchive/llms.txt)
+- [LLMRpanel llms.txt](https://asanaei.github.io/LLMRpanel/llms.txt)
+
+## Notes for assistants
+
+- The capsules are installed with each package: `system.file("ai", "<pkg>.md", package = "<pkg>")`.
+- Every execution function has an offline seam (`.runner` or an injected caller), so pipelines are testable without keys or cost.
+- API keys live in environment variables; a missing key is an error to report, not to patch around.

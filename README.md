@@ -12,8 +12,6 @@ served by GitHub Pages from this branch).
 | [LLMRAgent](https://github.com/asanaei/LLMRAgent) | Agents, multi-agent designs, experiments |
 | [LLMRcoder](https://github.com/asanaei/LLMRcoder) | Codebook-first annotation with sealed validation |
 | [LLMRvalid](https://github.com/asanaei/LLMRvalid) | Measurement-multiverse robustness audits |
-| [LLMRtrail](https://github.com/asanaei/LLMRtrail) | Verifiable replication archives |
+| [LLMRarchive](https://github.com/asanaei/LLMRarchive) | Verifiable replication archives |
 | [LLMRpanel](https://github.com/asanaei/LLMRpanel) | Calibrated silicon samples |
 | [FocusGroup](https://github.com/asanaei/FocusGroup) | Focus-group simulation with LLM agents |
-
-MIT. Author: Ali Sanaei.

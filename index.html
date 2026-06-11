@@ -63,6 +63,16 @@
   .card .links a { margin-right: .9rem; }
   .principles { padding-left: 1.1rem; max-width: 46rem; }
   .principles li { margin-bottom: .65rem; }
+  table.which {
+    border-collapse: collapse; width: 100%; max-width: 52rem;
+    margin: 1rem 0; font-size: .93rem;
+  }
+  table.which th, table.which td {
+    border: 1px solid var(--line); padding: .55rem .7rem;
+    text-align: left; vertical-align: top;
+  }
+  table.which th { background: #f1f4f7; color: var(--navy); font-weight: 600; }
+  table.which td:first-child { font-weight: 600; white-space: nowrap; }
   footer {
     border-top: 1px solid var(--line); margin-top: 4rem; padding: 1.5rem 0 0;
     color: var(--muted); font-size: .9rem;
@@ -82,13 +92,14 @@
 </header>
 
 <h2>Why this exists</h2>
-<p>LLMs are already producing measurements that end up in published tables —
-too often from one prompt, one model, one run, with no codebook, no gold
-set, no log, and no way for anyone to check. The ecosystem takes the
-opposite bet: validation discipline borrowed from content analysis,
-provenance an editor could demand by name, and economics that no longer
-excuse skipping either. Software cannot prevent dishonesty; it can make
-honesty cheap and dishonesty visible.</p>
+<p>Language models now produce measurements that reach published tables,
+and practice has moved faster than method: a single prompt and a single
+run often stand in for an instrument, with no codebook, no reliability
+estimate, and no record a later reader could consult. Content analysis
+settled these questions decades ago — instruments, gold standards,
+reliability, documentation. These packages carry that discipline over to
+LLM-assisted work and, by leaning on inexpensive open-weight models, make
+it cheap enough to be routine.</p>
 
 <h2>The workflow, end to end</h2>
 <ul class="pipeline">
@@ -96,15 +107,48 @@ honesty cheap and dishonesty visible.</p>
   <li><span class="stage">simulate</span><span class="who">LLMRAgent · LLMRpanel · FocusGroup</span><br>agents, panels, groups</li>
   <li><span class="stage">measure</span><span class="who">LLMRcoder</span><br>codebooks, sealed gold</li>
   <li><span class="stage">audit</span><span class="who">LLMRvalid</span><br>the measurement multiverse</li>
-  <li><span class="stage">archive</span><span class="who">LLMRtrail</span><br>reviewer-runnable provenance</li>
+  <li><span class="stage">archive</span><span class="who">LLMRarchive</span><br>reviewer-runnable provenance</li>
 </ul>
+
+<h2>Which package?</h2>
+<table class="which">
+  <thead>
+    <tr><th>Package</th><th>Use it when</th><th>Not for</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://asanaei.github.io/LLMRcoder/">LLMRcoder</a></td>
+      <td>Validated text measurement for quantitative inference</td>
+      <td>Accessible qualitative coding or text segmentation</td>
+    </tr>
+    <tr>
+      <td><a href="https://asanaei.github.io/LLMRvalid/">LLMRvalid</a></td>
+      <td>Robustness of a downstream estimand across measurement choices</td>
+      <td>Construct validity or pass/fail validation</td>
+    </tr>
+    <tr>
+      <td><a href="https://asanaei.github.io/LLMRarchive/">LLMRarchive</a></td>
+      <td>Reviewer-runnable replication archives from LLM audit logs</td>
+      <td>Measurement or estimation</td>
+    </tr>
+    <tr>
+      <td><a href="https://asanaei.github.io/LLMRpanel/">LLMRpanel</a></td>
+      <td>Calibrated silicon survey samples for design-stage work</td>
+      <td>Human-population estimates without calibration to a human benchmark</td>
+    </tr>
+  </tbody>
+</table>
+<p>All four packages follow the same workflow contract: construct a first
+object, build or extend it, run it with a <code>.runner</code> seam, read
+<code>diagnostics()</code>, draft <code>report()</code>, and optionally
+archive with LLMRarchive.</p>
 
 <h2>The packages</h2>
 <div class="grid">
 
   <div class="card">
     <h3>LLMR</h3>
-    <div class="status cran">CRAN · the foundation</div>
+    <div class="status cran">CRAN</div>
     <p>Unified access to OpenAI, Anthropic, Gemini, Groq, DeepSeek, Together,
     Ollama and more: structured output with schema enforcement, tool calling,
     streaming, logprobs, embeddings, tidy data-frame verbs, parallel and
@@ -127,19 +171,20 @@ honesty cheap and dishonesty visible.</p>
 
   <div class="card">
     <h3>LLMRcoder</h3>
-    <div class="status">GitHub · in development</div>
+    <div class="status">GitHub</div>
     <p>Codebook-first annotation: versioned, hashable instruments; gold sets
     whose sealed test split records every evaluation in a visible ledger;
     locked protocols; prompt-and-model tournaments with cost columns;
-    replicated corpus coding; generated methods text. Measurement-error
-    correction via the <code>ipd</code> bridge arrives in 0.2.</p>
+    replicated corpus coding; generated methods text. <code>gold_correct()</code>
+    reports measurement-error-corrected category prevalences from the audited
+    test split, with standard errors.</p>
     <div class="links"><a href="https://asanaei.github.io/LLMRcoder/">Site</a>
     <a href="https://github.com/asanaei/LLMRcoder">GitHub</a></div>
   </div>
 
   <div class="card">
     <h3>LLMRvalid</h3>
-    <div class="status">GitHub · in development</div>
+    <div class="status">GitHub</div>
     <p>Specification-curve analysis where the specifications are measurement
     choices: the estimand as code, recomputed across prompts, model families,
     label order, and temperature; sign and magnitude stability; a fragility
@@ -150,20 +195,20 @@ honesty cheap and dishonesty visible.</p>
   </div>
 
   <div class="card">
-    <h3>LLMRtrail</h3>
-    <div class="status">GitHub · in development</div>
+    <h3>LLMRarchive</h3>
+    <div class="status">GitHub</div>
     <p>Replication archives built from audit logs: content-addressed records,
     one sealed root to cite, completeness linting that maps every reported
     number to a logged call, IRB-grade redaction that keeps the hash tree
     while withholding the text, and a verifiability horizon that says which
     calls will still be checkable in ten years.</p>
-    <div class="links"><a href="https://asanaei.github.io/LLMRtrail/">Site</a>
-    <a href="https://github.com/asanaei/LLMRtrail">GitHub</a></div>
+    <div class="links"><a href="https://asanaei.github.io/LLMRarchive/">Site</a>
+    <a href="https://github.com/asanaei/LLMRarchive">GitHub</a></div>
   </div>
 
   <div class="card">
     <h3>LLMRpanel</h3>
-    <div class="status">GitHub · in development</div>
+    <div class="status">GitHub</div>
     <p>Calibrated silicon samples for the design stage: persona panels from
     margins you supply, Likert and choice items, vignette and conjoint
     designs with order randomization recorded as data, bias audits, and a
@@ -185,18 +230,19 @@ honesty cheap and dishonesty visible.</p>
 
 <h2>Principles</h2>
 <ul class="principles">
-  <li><strong>Validation is the default path.</strong> Codebooks, sealed gold
-  sets, and tournaments cost cents on open-weight models; the tooling makes
-  them fewer keystrokes than skipping them.</li>
-  <li><strong>Provenance over assertion.</strong> Every call can be logged,
-  hashed, sealed, and replayed; "we used GPT-4" stops being a methods
-  section.</li>
-  <li><strong>Honesty by visibility.</strong> Test-split peeks are ledgered,
-  uncalibrated panels carry banners, fragile conclusions get an index. The
-  objects tell on themselves, politely.</li>
-  <li><strong>An equalizing force.</strong> The lab with fifty dollars runs
-  the same audits as the lab with fifty thousand; local open weights keep
-  IRB-restricted text on the machine it lives on.</li>
+  <li><strong>Validation as the default path.</strong> Codebooks, gold
+  sets, and model tournaments cost cents on open-weight models; the tooling
+  makes them fewer keystrokes than their absence.</li>
+  <li><strong>Complete records.</strong> Every call can be logged, hashed,
+  sealed, and replayed, so a methods section can cite an artifact rather
+  than a model name.</li>
+  <li><strong>Diagnostics in the objects.</strong> Test-split evaluations
+  are ledgered, uncalibrated panels are labeled as such, and estimates
+  carry a fragility index — the state of the evidence travels with the
+  result.</li>
+  <li><strong>Wide access.</strong> A small lab runs the same audits as a
+  well-funded one, and local open weights keep restricted text on the
+  machine where it lives.</li>
 </ul>
 
 <h2>Install</h2>
@@ -206,7 +252,7 @@ honesty cheap and dishonesty visible.</p>
 remotes::install_github("asanaei/LLMRAgent")
 remotes::install_github("asanaei/LLMRcoder")
 remotes::install_github("asanaei/LLMRvalid")
-remotes::install_github("asanaei/LLMRtrail")
+remotes::install_github("asanaei/LLMRarchive")
 remotes::install_github("asanaei/LLMRpanel")</code></pre>
 
 <footer>
