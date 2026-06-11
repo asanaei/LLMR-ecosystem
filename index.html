@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The LLMR Ecosystem — LLM tooling for research in R</title>
+<meta name="description" content="An R package ecosystem for LLM-assisted social science: unified provider access, agents, validated annotation, robustness audits, replication archives, and calibrated silicon samples.">
+<style>
+  :root {
+    --navy: #2C3E50;
+    --ink: #1c2733;
+    --muted: #5b6b7b;
+    --line: #e3e8ee;
+    --bg: #fbfcfd;
+    --accent: #b3552e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem 4rem; }
+  header { padding: 4.5rem 0 2.5rem; border-bottom: 1px solid var(--line); }
+  h1 { font-size: 2.3rem; line-height: 1.2; margin: 0 0 .75rem; color: var(--navy); }
+  .lede { font-size: 1.18rem; color: var(--muted); max-width: 44rem; margin: 0; }
+  h2 { font-size: 1.35rem; color: var(--navy); margin: 3rem 0 1rem; }
+  p { max-width: 44rem; }
+  a { color: var(--navy); }
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .92em;
+  }
+  pre {
+    background: #f1f4f7; border: 1px solid var(--line); border-radius: 6px;
+    padding: 1rem 1.25rem; overflow-x: auto; max-width: 44rem;
+  }
+  .pipeline {
+    display: flex; flex-wrap: wrap; gap: .5rem; align-items: stretch;
+    margin: 1.5rem 0; padding: 0; list-style: none;
+  }
+  .pipeline li {
+    flex: 1 1 9rem; background: #fff; border: 1px solid var(--line);
+    border-radius: 8px; padding: .8rem 1rem; position: relative;
+  }
+  .pipeline .stage { display: block; font-size: .78rem; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: .15rem; }
+  .pipeline .who { font-weight: 600; color: var(--navy); }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1rem; margin-top: 1.25rem;
+  }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    padding: 1.15rem 1.25rem; display: flex; flex-direction: column;
+  }
+  .card h3 { margin: 0 0 .3rem; font-size: 1.06rem; color: var(--navy); }
+  .card .status { font-size: .74rem; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: .55rem; }
+  .card .status.cran { color: #2e7d4f; }
+  .card p { margin: 0 0 .9rem; font-size: .95rem; color: var(--ink); }
+  .card .links { margin-top: auto; font-size: .9rem; }
+  .card .links a { margin-right: .9rem; }
+  .principles { padding-left: 1.1rem; max-width: 46rem; }
+  .principles li { margin-bottom: .65rem; }
+  footer {
+    border-top: 1px solid var(--line); margin-top: 4rem; padding: 1.5rem 0 0;
+    color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>The LLMR ecosystem</h1>
+  <p class="lede">Language-model tooling for research in R: one provider layer,
+  and a methodology stack built on it — validated annotation, robustness
+  audits, verifiable replication archives, agents, and calibrated silicon
+  samples. Open-weight models brought the cost of rigor down to pennies;
+  these packages make the rigorous path the easy one.</p>
+</header>
+
+<h2>Why this exists</h2>
+<p>LLMs are already producing measurements that end up in published tables —
+too often from one prompt, one model, one run, with no codebook, no gold
+set, no log, and no way for anyone to check. The ecosystem takes the
+opposite bet: validation discipline borrowed from content analysis,
+provenance an editor could demand by name, and economics that no longer
+excuse skipping either. Software cannot prevent dishonesty; it can make
+honesty cheap and dishonesty visible.</p>
+
+<h2>The workflow, end to end</h2>
+<ul class="pipeline">
+  <li><span class="stage">call</span><span class="who">LLMR</span><br>any provider, one interface</li>
+  <li><span class="stage">simulate</span><span class="who">LLMRAgent · LLMRpanel · FocusGroup</span><br>agents, panels, groups</li>
+  <li><span class="stage">measure</span><span class="who">LLMRcoder</span><br>codebooks, sealed gold</li>
+  <li><span class="stage">audit</span><span class="who">LLMRvalid</span><br>the measurement multiverse</li>
+  <li><span class="stage">archive</span><span class="who">LLMRtrail</span><br>reviewer-runnable provenance</li>
+</ul>
+
+<h2>The packages</h2>
+<div class="grid">
+
+  <div class="card">
+    <h3>LLMR</h3>
+    <div class="status cran">CRAN · the foundation</div>
+    <p>Unified access to OpenAI, Anthropic, Gemini, Groq, DeepSeek, Together,
+    Ollama and more: structured output with schema enforcement, tool calling,
+    streaming, logprobs, embeddings, tidy data-frame verbs, parallel and
+    half-price batch execution, audit logging, replication and agreement
+    statistics, cost accounting.</p>
+    <div class="links"><a href="https://asanaei.github.io/LLMR/">Site</a>
+    <a href="https://github.com/asanaei/LLMR">GitHub</a></div>
+  </div>
+
+  <div class="card">
+    <h3>LLMRAgent</h3>
+    <div class="status">GitHub</div>
+    <p>Agents with personas, tools, pluggable memory, and hard budgets checked
+    before every call; agents that delegate to other agents; multi-agent
+    debates, interviews, and deliberations with private votes; factorial
+    agent experiments; a strong-planner/cheap-worker orchestrator.</p>
+    <div class="links"><a href="https://asanaei.github.io/LLMRAgent/">Site</a>
+    <a href="https://github.com/asanaei/LLMRAgent">GitHub</a></div>
+  </div>
+
+  <div class="card">
+    <h3>LLMRcoder</h3>
+    <div class="status">GitHub · in development</div>
+    <p>Codebook-first annotation: versioned, hashable instruments; gold sets
+    whose sealed test split records every evaluation in a visible ledger;
+    locked protocols; prompt-and-model tournaments with cost columns;
+    replicated corpus coding; generated methods text. Measurement-error
+    correction via the <code>ipd</code> bridge arrives in 0.2.</p>
+    <div class="links"><a href="https://asanaei.github.io/LLMRcoder/">Site</a>
+    <a href="https://github.com/asanaei/LLMRcoder">GitHub</a></div>
+  </div>
+
+  <div class="card">
+    <h3>LLMRvalid</h3>
+    <div class="status">GitHub · in development</div>
+    <p>Specification-curve analysis where the specifications are measurement
+    choices: the estimand as code, recomputed across prompts, model families,
+    label order, and temperature; sign and magnitude stability; a fragility
+    index for how little must change before the conclusion flips. No badges,
+    deliberately.</p>
+    <div class="links"><a href="https://asanaei.github.io/LLMRvalid/">Site</a>
+    <a href="https://github.com/asanaei/LLMRvalid">GitHub</a></div>
+  </div>
+
+  <div class="card">
+    <h3>LLMRtrail</h3>
+    <div class="status">GitHub · in development</div>
+    <p>Replication archives built from audit logs: content-addressed records,
+    one sealed root to cite, completeness linting that maps every reported
+    number to a logged call, IRB-grade redaction that keeps the hash tree
+    while withholding the text, and a verifiability horizon that says which
+    calls will still be checkable in ten years.</p>
+    <div class="links"><a href="https://asanaei.github.io/LLMRtrail/">Site</a>
+    <a href="https://github.com/asanaei/LLMRtrail">GitHub</a></div>
+  </div>
+
+  <div class="card">
+    <h3>LLMRpanel</h3>
+    <div class="status">GitHub · in development</div>
+    <p>Calibrated silicon samples for the design stage: persona panels from
+    margins you supply, Likert and choice items, vignette and conjoint
+    designs with order randomization recorded as data, bias audits, and a
+    banner that refuses to disappear until benchmark comparison earns it.</p>
+    <div class="links"><a href="https://asanaei.github.io/LLMRpanel/">Site</a>
+    <a href="https://github.com/asanaei/LLMRpanel">GitHub</a></div>
+  </div>
+
+  <div class="card">
+    <h3>FocusGroup</h3>
+    <div class="status">GitHub</div>
+    <p>Simulation and analysis of focus-group discussions with LLM agents:
+    moderated sessions, turn dynamics, and transcript analysis for
+    instrument piloting and theory development.</p>
+    <div class="links"><a href="https://github.com/asanaei/FocusGroup">GitHub</a></div>
+  </div>
+
+</div>
+
+<h2>Principles</h2>
+<ul class="principles">
+  <li><strong>Validation is the default path.</strong> Codebooks, sealed gold
+  sets, and tournaments cost cents on open-weight models; the tooling makes
+  them fewer keystrokes than skipping them.</li>
+  <li><strong>Provenance over assertion.</strong> Every call can be logged,
+  hashed, sealed, and replayed; "we used GPT-4" stops being a methods
+  section.</li>
+  <li><strong>Honesty by visibility.</strong> Test-split peeks are ledgered,
+  uncalibrated panels carry banners, fragile conclusions get an index. The
+  objects tell on themselves, politely.</li>
+  <li><strong>An equalizing force.</strong> The lab with fifty dollars runs
+  the same audits as the lab with fifty thousand; local open weights keep
+  IRB-restricted text on the machine it lives on.</li>
+</ul>
+
+<h2>Install</h2>
+<pre><code>install.packages("LLMR")                  # CRAN
+
+# the rest, from GitHub:
+remotes::install_github("asanaei/LLMRAgent")
+remotes::install_github("asanaei/LLMRcoder")
+remotes::install_github("asanaei/LLMRvalid")
+remotes::install_github("asanaei/LLMRtrail")
+remotes::install_github("asanaei/LLMRpanel")</code></pre>
+
+<footer>
+  <p>Ali Sanaei · MIT licensed ·
+  <a href="https://github.com/asanaei">github.com/asanaei</a></p>
+</footer>
+
+</main>
+</body>
+</html>
