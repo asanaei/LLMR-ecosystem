@@ -9,20 +9,16 @@
 
 ## Usage capsules
 
-- [LLMR](https://asanaei.github.io/LLMR/ai/LLMR.md): unified provider layer — configs, calls, structured output, tools, streaming, logprobs, embeddings, tidy verbs, parallel/batch execution, logging, agreement, cost.
+- [LLMR](https://asanaei.github.io/LLMR/ai/LLMR.md): unified provider layer -- configs, calls, structured output, tools, streaming, logprobs, embeddings, tidy verbs, parallel/batch execution, logging, agreement, cost.
 - [LLMRAgent](https://asanaei.github.io/LLMRAgent/ai/LLMRAgent.md): agents with personas, tools, memory, hard budgets; delegation; multi-agent designs; experiments; orchestration.
-- [LLMRcoder](https://asanaei.github.io/LLMRcoder/ai/LLMRcoder.md): codebook-first annotation with sealed gold validation, locked protocols, tournaments, corpus coding, reports.
-- [LLMRvalid](https://asanaei.github.io/LLMRvalid/ai/LLMRvalid.md): robustness audits — the reported estimate recomputed across the measurement multiverse; fragility index.
-- [LLMRarchive](https://asanaei.github.io/LLMRarchive/ai/LLMRarchive.md): verifiable replication archives from audit logs; sealing, completeness linting, redaction, verifiability horizons.
-- [LLMRpanel](https://asanaei.github.io/LLMRpanel/ai/LLMRpanel.md): calibrated silicon samples — persona panels, instruments, conjoint/vignette designs, coverage-aware calibration, bias audits.
+- [LLMRcontent](https://asanaei.github.io/LLMRcontent/ai/LLMRcontent.md): LLM-assisted content analysis -- codebook-first annotation with sealed gold validation, locked protocols, tournaments, corpus coding and error-corrected prevalences; measurement-multiverse robustness audits with a fragility index; and verifiable replication archives from audit logs (sealing, completeness linting, redaction, verifiability horizons).
+- [LLMRpanel](https://asanaei.github.io/LLMRpanel/ai/LLMRpanel.md): calibrated silicon samples -- persona panels, instruments, conjoint/vignette designs, coverage-aware calibration, bias audits.
 
 ## Per-package documentation indexes
 
 - [LLMR llms.txt](https://asanaei.github.io/LLMR/llms.txt)
 - [LLMRAgent llms.txt](https://asanaei.github.io/LLMRAgent/llms.txt)
-- [LLMRcoder llms.txt](https://asanaei.github.io/LLMRcoder/llms.txt)
-- [LLMRvalid llms.txt](https://asanaei.github.io/LLMRvalid/llms.txt)
-- [LLMRarchive llms.txt](https://asanaei.github.io/LLMRarchive/llms.txt)
+- [LLMRcontent llms.txt](https://asanaei.github.io/LLMRcontent/llms.txt)
 - [LLMRpanel llms.txt](https://asanaei.github.io/LLMRpanel/llms.txt)
 
 ## Notes for assistants
