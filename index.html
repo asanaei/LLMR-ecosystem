@@ -107,7 +107,7 @@ perform.</p>
 <h2>The workflow, end to end</h2>
 <ul class="pipeline">
   <li><span class="stage">call</span><span class="who">LLMR</span><br>any provider, one interface</li>
-  <li><span class="stage">simulate</span><span class="who">LLMRAgent &middot; LLMRpanel &middot; FocusGroup</span><br>agents, panels, groups</li>
+  <li><span class="stage">simulate</span><span class="who">LLMRagent &middot; LLMRpanel &middot; FocusGroup</span><br>agents, panels, groups</li>
   <li><span class="stage">analyze</span><span class="who">LLMRcontent</span><br>code, audit, archive</li>
 </ul>
 
@@ -165,15 +165,15 @@ archive with LLMRcontent.</p>
   </div>
 
   <div class="card">
-    <h3>LLMRAgent</h3>
+    <h3>LLMRagent</h3>
     <div class="status">GitHub</div>
     <p>Agents with personas, tools, pluggable memory, and token budgets checked
     before every call; agents that delegate to other agents; multi-agent
     debates, interviews, and deliberations with private votes; factorial agent
     experiments; and an orchestrator that pairs a capable planning model with a
     cheaper model for routine work.</p>
-    <div class="links"><a href="https://asanaei.github.io/LLMRAgent/">Site</a>
-    <a href="https://github.com/asanaei/LLMRAgent">GitHub</a></div>
+    <div class="links"><a href="https://asanaei.github.io/LLMRagent/">Site</a>
+    <a href="https://github.com/asanaei/LLMRagent">GitHub</a></div>
   </div>
 
   <div class="card">
@@ -256,7 +256,7 @@ demo mode.</p>
 <pre><code>install.packages("LLMR")                   # CRAN
 
 # the rest, from GitHub:
-remotes::install_github("asanaei/LLMRAgent")
+remotes::install_github("asanaei/LLMRagent")
 remotes::install_github("asanaei/LLMRcontent")
 remotes::install_github("asanaei/LLMRpanel")
 remotes::install_github("asanaei/FocusGroup")

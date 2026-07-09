@@ -9,7 +9,7 @@ served by GitHub Pages from this branch).
 | Package | What it does |
 |---|---|
 | [LLMR](https://github.com/asanaei/LLMR) | Unified provider layer (CRAN) |
-| [LLMRAgent](https://github.com/asanaei/LLMRAgent) | Agents, multi-agent designs, experiments |
+| [LLMRagent](https://github.com/asanaei/LLMRagent) | Agents, multi-agent designs, experiments |
 | [LLMRcontent](https://github.com/asanaei/LLMRcontent) | Content analysis: codebook coding with sealed validation, robustness audits, and replication archives |
 | [LLMRpanel](https://github.com/asanaei/LLMRpanel) | Calibrated silicon samples (with a built-in GUI) |
 | [FocusGroup](https://github.com/asanaei/FocusGroup) | Focus-group simulation with LLM agents (with a built-in GUI) |
