@@ -86,12 +86,10 @@
 
 <header>
   <h1>The LLMR ecosystem</h1>
-  <p class="lede">A set of R packages for using language models in research.
-  One package handles the providers; the others build the methods a study
-  needs on top of it: annotation checked against human labels, robustness
-  audits, replication archives, agent designs, and calibrated silicon samples.
-  The methods can run on inexpensive open-weight models, so validation and
-  auditing do not require a large compute budget.</p>
+  <p class="lede">LLMR provides the common interface to language-model
+  providers. The other packages implement agents, model-persona panels, group
+  discussions, text measurement, robustness analysis, and replication
+  archives.</p>
 </header>
 
 <h2>Why this exists</h2>
@@ -100,9 +98,8 @@ were measured data. Often a single prompt and a single run stand in for an
 instrument: no codebook, no reliability estimate, and no record a later reader
 could check. Content analysis worked out how to handle these problems long ago,
 through codebooks, gold standards, reliability statistics, and documentation.
-These packages apply that older discipline to language-model work. They run on
-inexpensive open-weight models, so the checks they ask for cost little to
-perform.</p>
+These packages apply that older discipline to language-model work. The
+validation and audit procedures can run with local open-weight models.</p>
 
 <h2>The workflow, end to end</h2>
 <ul class="pipeline">
@@ -134,7 +131,7 @@ perform.</p>
     </tr>
     <tr>
       <td><a href="https://asanaei.github.io/LLMRpanel/">LLMRpanel</a></td>
-      <td>Calibrated silicon survey samples for design-stage work</td>
+      <td>Survey or experiment design with panels of model personas</td>
       <td>Human-population estimates without calibration to a human benchmark</td>
     </tr>
     <tr>
@@ -144,10 +141,10 @@ perform.</p>
     </tr>
   </tbody>
 </table>
-<p>These packages follow the same workflow contract: construct a first
-object, build or extend it, run it with a <code>.runner</code> seam, read
-<code>diagnostics()</code>, draft <code>report()</code>, and optionally
-archive with LLMRcontent.</p>
+<p>The packages can run analyses through a user-supplied
+<code>.runner</code> and share <code>diagnostics()</code> and
+<code>report()</code> methods. LLMRcontent can archive the resulting
+records.</p>
 
 <h2>The packages</h2>
 <div class="grid">
@@ -155,11 +152,9 @@ archive with LLMRcontent.</p>
   <div class="card">
     <h3>LLMR</h3>
     <div class="status cran">CRAN</div>
-    <p>Unified access to OpenAI, Anthropic, Gemini, Groq, DeepSeek, Together,
-    Ollama and more: structured output with schema enforcement, tool calling,
-    streaming, logprobs, embeddings, tidy data-frame verbs, parallel and
-    half-price batch execution, audit logging, replication and agreement
-    statistics, cost accounting.</p>
+    <p>LLMR provides one configuration and calling interface for hosted and
+    local language models. The same functions serve chat and embedding models
+    and extend to multi-model and multi-condition studies.</p>
     <div class="links"><a href="https://asanaei.github.io/LLMR/">Site</a>
     <a href="https://github.com/asanaei/LLMR">GitHub</a></div>
   </div>
@@ -167,11 +162,9 @@ archive with LLMRcontent.</p>
   <div class="card">
     <h3>LLMRagent</h3>
     <div class="status">GitHub</div>
-    <p>Agents with personas, tools, pluggable memory, and token budgets checked
-    before every call; agents that delegate to other agents; multi-agent
-    debates, interviews, and deliberations with private votes; factorial agent
-    experiments; and an orchestrator that pairs a capable planning model with a
-    cheaper model for routine work.</p>
+    <p>LLMRagent constructs language-model agents with personas, tools, memory,
+    and budgets. It coordinates agents through delegation, fixed pipelines,
+    shared conversations, and factorial experiments.</p>
     <div class="links"><a href="https://asanaei.github.io/LLMRagent/">Site</a>
     <a href="https://github.com/asanaei/LLMRagent">GitHub</a></div>
   </div>
@@ -179,13 +172,9 @@ archive with LLMRcontent.</p>
   <div class="card">
     <h3>LLMRcontent</h3>
     <div class="status">GitHub</div>
-    <p>LLM-assisted content analysis in one package: codebook-first coding with
-    versioned instruments and sealed gold validation, measurement-error-corrected
-    prevalences, and prompt-and-model tournaments; measurement-multiverse
-    robustness audits that recompute the estimand across prompts, model families,
-    label order, and temperature, with a fragility index; and verifiable
-    replication archives built from audit logs, with content-addressed sealing,
-    IRB-grade redaction, and a verifiability horizon.</p>
+    <p>LLMRcontent codes text from a specified codebook and evaluates the coding
+    against held-out human labels. It compares estimates across measurement
+    choices and builds replication archives from LLMR audit logs.</p>
     <div class="links"><a href="https://asanaei.github.io/LLMRcontent/">Site</a>
     <a href="https://github.com/asanaei/LLMRcontent">GitHub</a></div>
   </div>
@@ -193,11 +182,9 @@ archive with LLMRcontent.</p>
   <div class="card">
     <h3>LLMRpanel</h3>
     <div class="status">GitHub</div>
-    <p>Calibrated silicon samples for the design stage: persona panels drawn
-    from margins you supply, Likert and choice items, vignette and conjoint
-    designs with the order randomization recorded as data, and bias audits.
-    Results stay marked as uncalibrated until they are compared against a human
-    benchmark.</p>
+    <p>LLMRpanel administers survey and experimental instruments to panels of
+    model personas. It supports panels drawn from supplied margins, Likert and
+    choice items, and vignette and conjoint designs.</p>
     <div class="links"><a href="https://asanaei.github.io/LLMRpanel/">Site</a>
     <a href="https://github.com/asanaei/LLMRpanel">GitHub</a></div>
   </div>
@@ -205,37 +192,33 @@ archive with LLMRcontent.</p>
   <div class="card">
     <h3>FocusGroup</h3>
     <div class="status">GitHub</div>
-    <p>Simulation and analysis of focus-group discussions with LLM agents:
-    moderated sessions with configurable turn-taking, transcript analysis, and a
-    continuation experiment that perturbs one turn and reads the next as a
-    dependent variable. Ships a Shiny GUI
-    (<code>run_focus_studio()</code>) for running, analyzing, and experimenting.</p>
+    <p>FocusGroup runs moderated discussions among language-model agents and
+    supports experiments that vary one turn and measure the next response. Its
+    Shiny interface (<code>run_focus_studio()</code>) runs sessions and supports
+    transcript analysis.</p>
     <div class="links"><a href="https://asanaei.github.io/FocusGroup/">Site</a>
     <a href="https://github.com/asanaei/FocusGroup">GitHub</a></div>
   </div>
 
 </div>
 
-<h2>Principles</h2>
+<h2>Shared conventions</h2>
 <ul class="principles">
-  <li><strong>Validation by default.</strong> The codebooks, gold sets, and
-  model comparisons that a careful study needs are built into the normal way of
-  working, not left as extra steps a user has to add.</li>
-  <li><strong>Complete records.</strong> Every call can be logged, hashed,
-  sealed, and replayed, so a methods section can cite a fixed artifact rather
-  than a model name that may change.</li>
-  <li><strong>Diagnostics in the objects.</strong> Test-split evaluations are
-  recorded, uncalibrated panels are labeled as such, and estimates carry a
-  fragility index. The state of the evidence stays attached to the result.</li>
-  <li><strong>Modest requirements.</strong> The audits can be run with modest
-  compute, and local open-weight models let restricted text stay on the machine
-  where it is held.</li>
+  <li><strong>Validation inputs.</strong> LLMRcontent uses codebooks, gold sets,
+  and model comparisons in its measurement workflow.</li>
+  <li><strong>Audit records.</strong> LLMR logs model calls, and LLMRcontent
+  builds hash-sealed archives from those logs.</li>
+  <li><strong>Result diagnostics.</strong> Results retain test-split
+  evaluations, panel calibration status, and fragility measures.</li>
+  <li><strong>Local execution.</strong> Validation and audit methods can use
+  local open-weight models. When local models are used, restricted text remains
+  on the host machine.</li>
 </ul>
 
 <h2>Point-and-click</h2>
 <p>Three of the packages ship a Shiny front end, so the same workflows run
-without writing code. Keys are read from environment variables, never pasted
-into the app, and a deterministic demo mode runs offline.</p>
+without writing code. The front ends read API keys from environment variables
+and include an offline demonstration mode.</p>
 <ul class="guis">
   <li><strong>Content analysis.</strong>
   <code>LLMRcontent::run_content_studio()</code> -- build a codebook, seal a gold
