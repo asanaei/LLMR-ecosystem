@@ -1,19 +1,19 @@
 # The LLMR Ecosystem
 
-Landing page for the LLMR family of R packages -- LLM tooling for research,
-with the methodology built in.
+Landing page for the LLMR family of R packages -- R tools for model-assisted
+research.
 
 Live at **https://asanaei.github.io/LLMR-ecosystem/** (plain static HTML,
 served by GitHub Pages from this branch).
 
 | Package | What it does |
 |---|---|
-| [LLMR](https://github.com/asanaei/LLMR) | Unified provider layer (CRAN) |
-| [LLMRagent](https://github.com/asanaei/LLMRagent) | Agents, multi-agent designs, experiments |
+| [LLMR](https://github.com/asanaei/LLMR) | Common provider interface (CRAN) |
+| [LLMRagent](https://github.com/asanaei/LLMRagent) | Governed agents, multi-agent designs, and experiments |
 | [LLMRcontent](https://github.com/asanaei/LLMRcontent) | Content analysis: codebook coding with sealed validation, robustness audits, and replication archives |
-| [LLMRpanel](https://github.com/asanaei/LLMRpanel) | Benchmarked persona panels (with a built-in GUI) |
+| [LLMRpanel](https://github.com/asanaei/LLMRpanel) | Benchmarked Likert, choice, open-response, and conjoint instruments for persona panels (with a built-in GUI) |
 | [FocusGroup](https://github.com/asanaei/FocusGroup) | Focus-group simulation with LLM agents (with a built-in GUI) |
-| [LLMR.shiny](https://github.com/asanaei/LLMR.shiny) | Shared Shiny substrate for the family's GUIs |
+| [LLMR.shiny](https://github.com/asanaei/LLMR.shiny) | Shared Shiny components for the family's GUIs |
 
 ## Point-and-click
 

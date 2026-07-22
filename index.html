@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The LLMR Ecosystem -- LLM tooling for research in R</title>
-<meta name="description" content="An R package ecosystem for LLM-assisted social science: unified provider access, agents, validated annotation, robustness audits, replication archives, and benchmarked persona panels.">
+<title>The LLMR Ecosystem -- R tools for model-assisted research</title>
+<meta name="description" content="An R package ecosystem for model-assisted social science: a common provider interface, governed agents, validated annotation, robustness analysis, replication archives, benchmarked persona panels, and moderated discussions.">
 <style>
   :root {
     --navy: #2C3E50;
@@ -93,19 +93,22 @@
 </header>
 
 <h2>Why this exists</h2>
-<p>Language-model output increasingly appears in published tables as if it
-were measured data. Often a single prompt and a single run stand in for an
-instrument: no codebook, no reliability estimate, and no record a later reader
-could check. Content analysis worked out how to handle these problems long ago,
-through codebooks, gold standards, reliability statistics, and documentation.
-These packages apply that older discipline to language-model work. The
-validation and audit procedures can run with local open-weight models.</p>
+<p>Model-assisted research poses distinct design problems across research
+tasks. Provider-independent experiments need comparable configurations and
+call records. Governed agents need explicit personas, tools, memory, budgets,
+and coordination rules. Persona-panel instruments need recorded randomization
+and comparison with human benchmarks. Moderated discussions need stated
+participant construction, moderation, and turn-level experimental designs.
+Text measurement needs codebooks, held-out human labels, uncertainty estimates,
+and records that later readers can check. The family separates these tasks
+while sharing provider access and result conventions.</p>
 
-<h2>The workflow, end to end</h2>
+<h2>Research tasks</h2>
 <ul class="pipeline">
-  <li><span class="stage">call</span><span class="who">LLMR</span><br>any provider, one interface</li>
-  <li><span class="stage">simulate</span><span class="who">LLMRagent &middot; LLMRpanel &middot; FocusGroup</span><br>agents, panels, groups</li>
-  <li><span class="stage">analyze</span><span class="who">LLMRcontent</span><br>code, audit, archive</li>
+  <li><span class="stage">compare</span><span class="who">LLMR</span><br>provider-independent calls and experiments</li>
+  <li><span class="stage">govern</span><span class="who">LLMRagent</span><br>agent roles, budgets, and coordination</li>
+  <li><span class="stage">pilot</span><span class="who">LLMRpanel &middot; FocusGroup</span><br>instruments and moderated discussions</li>
+  <li><span class="stage">measure</span><span class="who">LLMRcontent</span><br>validated coding, robustness, and replication</li>
 </ul>
 
 <h2>Which package?</h2>
@@ -115,19 +118,19 @@ validation and audit procedures can run with local open-weight models.</p>
   </thead>
   <tbody>
     <tr>
+      <td><a href="https://asanaei.github.io/LLMR/">LLMR</a></td>
+      <td>Calling chat or embedding models through a common interface and comparing models or conditions</td>
+      <td>Defining a content measure, persona panel, governed agent, or moderated discussion</td>
+    </tr>
+    <tr>
+      <td><a href="https://asanaei.github.io/LLMRagent/">LLMRagent</a></td>
+      <td>Constructing governed agents and comparing agent designs</td>
+      <td>Persona-panel instruments or moderated group discussions</td>
+    </tr>
+    <tr>
       <td><a href="https://asanaei.github.io/LLMRcontent/">LLMRcontent</a></td>
-      <td>Validated text measurement for quantitative inference</td>
+      <td>Validated text measurement, robustness across coding choices, and replication archives</td>
       <td>Accessible qualitative coding or text segmentation</td>
-    </tr>
-    <tr>
-      <td><a href="https://asanaei.github.io/LLMRcontent/">LLMRcontent</a></td>
-      <td>Robustness of a downstream estimand across measurement choices</td>
-      <td>Construct validity or pass/fail validation</td>
-    </tr>
-    <tr>
-      <td><a href="https://asanaei.github.io/LLMRcontent/">LLMRcontent</a></td>
-      <td>Reviewer-runnable replication archives from LLM audit logs</td>
-      <td>Measurement or estimation</td>
     </tr>
     <tr>
       <td><a href="https://asanaei.github.io/LLMRpanel/">LLMRpanel</a></td>
@@ -141,10 +144,8 @@ validation and audit procedures can run with local open-weight models.</p>
     </tr>
   </tbody>
 </table>
-<p>The packages can run analyses through a user-supplied
-<code>.runner</code> and share <code>diagnostics()</code> and
-<code>report()</code> methods. LLMRcontent can archive the resulting
-records.</p>
+<p>Each package reference site documents its research workflow, result
+objects, and scope.</p>
 
 <h2>The packages</h2>
 <div class="grid">
@@ -183,8 +184,8 @@ records.</p>
     <h3>LLMRpanel</h3>
     <div class="status">GitHub</div>
     <p>LLMRpanel administers survey and experimental instruments to panels of
-    model personas. It supports panels drawn from supplied margins, Likert and
-    choice items, and vignette and conjoint designs.</p>
+    model personas. It supports panels drawn from supplied margins and
+    instruments with Likert, choice, open-response, and conjoint items.</p>
     <div class="links"><a href="https://asanaei.github.io/LLMRpanel/">Site</a>
     <a href="https://github.com/asanaei/LLMRpanel">GitHub</a></div>
   </div>
@@ -202,7 +203,7 @@ records.</p>
 
 </div>
 
-<h2>Shared conventions</h2>
+<h2>Reproducibility principles</h2>
 <ul class="principles">
   <li><strong>Validation inputs.</strong> LLMRcontent uses codebooks, gold sets,
   and model comparisons in its measurement workflow.</li>
@@ -231,9 +232,9 @@ and include an offline demonstration mode.</p>
   a transcript, or run a continuation experiment that perturbs one turn and
   compares the next.</li>
 </ul>
-<p>All three are built on <strong>LLMR.shiny</strong>, a shared substrate that
-supplies the provider sidebar, key handling, cost accounting, and the offline
-demo mode.</p>
+<p>All three are built on <strong>LLMR.shiny</strong>, whose shared Shiny
+components supply the provider sidebar, key handling, cost accounting, and
+the offline demonstration mode.</p>
 
 <h2>Install</h2>
 <pre><code>install.packages("LLMR")                   # CRAN
@@ -244,8 +245,8 @@ remotes::install_github("asanaei/LLMRcontent")
 remotes::install_github("asanaei/LLMRpanel")
 remotes::install_github("asanaei/FocusGroup")
 
-# the GUIs ship inside the packages above (run_*_studio()); they share
-# one substrate, installed alongside them:
+# the GUIs ship inside the packages above (run_*_studio()); install the
+# shared Shiny components alongside them:
 remotes::install_github("asanaei/LLMR.shiny")
 </code></pre>
 
