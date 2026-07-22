@@ -11,7 +11,7 @@ served by GitHub Pages from this branch).
 | [LLMR](https://github.com/asanaei/LLMR) | Unified provider layer (CRAN) |
 | [LLMRagent](https://github.com/asanaei/LLMRagent) | Agents, multi-agent designs, experiments |
 | [LLMRcontent](https://github.com/asanaei/LLMRcontent) | Content analysis: codebook coding with sealed validation, robustness audits, and replication archives |
-| [LLMRpanel](https://github.com/asanaei/LLMRpanel) | Calibrated silicon samples (with a built-in GUI) |
+| [LLMRpanel](https://github.com/asanaei/LLMRpanel) | Benchmarked persona panels (with a built-in GUI) |
 | [FocusGroup](https://github.com/asanaei/FocusGroup) | Focus-group simulation with LLM agents (with a built-in GUI) |
 | [LLMR.shiny](https://github.com/asanaei/LLMR.shiny) | Shared Shiny substrate for the family's GUIs |
 
@@ -20,5 +20,5 @@ served by GitHub Pages from this branch).
 Three packages ship a Shiny front end, all built on `LLMR.shiny`:
 
 - `LLMRcontent::run_content_studio()` -- content analysis (codebook, gold set, coding tournament, validation report).
-- `LLMRpanel::run_panel_studio()` -- silicon surveys (persona panels, Likert and choice items, calibration).
+- `LLMRpanel::run_panel_studio()` -- silicon surveys (persona panels, Likert and choice items, benchmark comparison).
 - `FocusGroup::run_focus_studio()` -- focus groups (run a session, analyze a transcript, or run a continuation experiment).

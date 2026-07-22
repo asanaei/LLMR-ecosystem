@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The LLMR Ecosystem -- LLM tooling for research in R</title>
-<meta name="description" content="An R package ecosystem for LLM-assisted social science: unified provider access, agents, validated annotation, robustness audits, replication archives, and calibrated silicon samples.">
+<meta name="description" content="An R package ecosystem for LLM-assisted social science: unified provider access, agents, validated annotation, robustness audits, replication archives, and benchmarked persona panels.">
 <style>
   :root {
     --navy: #2C3E50;
@@ -132,7 +132,7 @@ validation and audit procedures can run with local open-weight models.</p>
     <tr>
       <td><a href="https://asanaei.github.io/LLMRpanel/">LLMRpanel</a></td>
       <td>Survey or experiment design with panels of model personas</td>
-      <td>Human-population estimates without calibration to a human benchmark</td>
+      <td>Human-population estimates without comparison against a human benchmark</td>
     </tr>
     <tr>
       <td><a href="https://asanaei.github.io/FocusGroup/">FocusGroup</a></td>
@@ -209,7 +209,7 @@ records.</p>
   <li><strong>Audit records.</strong> LLMR logs model calls, and LLMRcontent
   builds hash-sealed archives from those logs.</li>
   <li><strong>Result diagnostics.</strong> Results retain test-split
-  evaluations, panel calibration status, and fragility measures.</li>
+  evaluations, panel benchmark status, and fragility measures.</li>
   <li><strong>Local execution.</strong> Validation and audit methods can use
   local open-weight models. When local models are used, restricted text remains
   on the host machine.</li>
@@ -225,7 +225,7 @@ and include an offline demonstration mode.</p>
   set, run a coding tournament, and read the validation report.</li>
   <li><strong>Silicon surveys.</strong>
   <code>LLMRpanel::run_panel_studio()</code> -- draw a persona panel from
-  margins, administer Likert and choice items, and read the calibration banner.</li>
+  margins, administer Likert and choice items, and read the benchmark banner.</li>
   <li><strong>Focus groups.</strong>
   <code>FocusGroup::run_focus_studio()</code> -- run a moderated session, analyze
   a transcript, or run a continuation experiment that perturbs one turn and
