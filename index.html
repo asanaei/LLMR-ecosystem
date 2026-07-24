@@ -96,12 +96,12 @@
 <p>Model-assisted research poses distinct design problems across research
 tasks. Provider-independent experiments need comparable configurations and
 call records. Governed agents need explicit personas, tools, memory, budgets,
-and coordination rules. Persona-panel instruments need recorded randomization
-and comparison with human benchmarks. Moderated discussions need stated
-participant construction, moderation, and turn-level experimental designs.
-Text measurement needs codebooks, held-out human labels, uncertainty estimates,
-and records that later readers can check. The family separates these tasks
-while sharing provider access and result conventions.</p>
+and coordination rules. Persona-panel instruments need respondent-level
+randomization and comparison with human benchmarks. Moderated discussions need
+stated participant construction, moderation, and turn-level experimental
+designs. Text measurement needs codebooks, held-out human labels, uncertainty
+estimates, and records that later readers can check. The family separates these
+tasks while sharing provider access and result conventions.</p>
 
 <h2>Research tasks</h2>
 <ul class="pipeline">
@@ -162,7 +162,7 @@ objects, and scope.</p>
 
   <div class="card">
     <h3>LLMRagent</h3>
-    <div class="status">GitHub</div>
+    <div class="status">GitHub; CRAN submission imminent</div>
     <p>LLMRagent constructs language-model agents with personas, tools, memory,
     and budgets. It coordinates agents through delegation, fixed pipelines,
     shared conversations, and factorial experiments.</p>
@@ -172,7 +172,7 @@ objects, and scope.</p>
 
   <div class="card">
     <h3>LLMRcontent</h3>
-    <div class="status">GitHub</div>
+    <div class="status">GitHub; CRAN submission imminent</div>
     <p>LLMRcontent codes text from a specified codebook and evaluates the coding
     against held-out human labels. It compares estimates across measurement
     choices and builds replication archives from LLMR audit logs.</p>
@@ -182,17 +182,18 @@ objects, and scope.</p>
 
   <div class="card">
     <h3>LLMRpanel</h3>
-    <div class="status">GitHub</div>
+    <div class="status">GitHub; CRAN submission imminent</div>
     <p>LLMRpanel administers survey and experimental instruments to panels of
-    model personas. It supports panels drawn from supplied margins and
-    instruments with Likert, choice, open-response, and conjoint items.</p>
+    model personas. It supports Likert, choice, open-response, and conjoint
+    instruments, respondent-level randomization, and comparison against a
+    human benchmark.</p>
     <div class="links"><a href="https://asanaei.github.io/LLMRpanel/">Site</a>
     <a href="https://github.com/asanaei/LLMRpanel">GitHub</a></div>
   </div>
 
   <div class="card">
     <h3>FocusGroup</h3>
-    <div class="status">GitHub</div>
+    <div class="status">GitHub; CRAN submission imminent</div>
     <p>FocusGroup runs moderated discussions among language-model agents and
     supports experiments that vary one turn and measure the next response. Its
     Shiny interface (<code>run_focus_studio()</code>) runs sessions and supports
@@ -224,7 +225,7 @@ and include an offline demonstration mode.</p>
   <li><strong>Content analysis.</strong>
   <code>LLMRcontent::run_content_studio()</code> -- build a codebook, seal a gold
   set, run a coding tournament, and read the validation report.</li>
-  <li><strong>Silicon surveys.</strong>
+  <li><strong>Persona-panel surveys.</strong>
   <code>LLMRpanel::run_panel_studio()</code> -- draw a persona panel from
   margins, administer Likert and choice items, and read the benchmark banner.</li>
   <li><strong>Focus groups.</strong>
@@ -232,22 +233,19 @@ and include an offline demonstration mode.</p>
   a transcript, or run a continuation experiment that perturbs one turn and
   compares the next.</li>
 </ul>
-<p>All three are built on <strong>LLMR.shiny</strong>, whose shared Shiny
-components supply the provider sidebar, key handling, cost accounting, and
-the offline demonstration mode.</p>
+<p>All three are built on <strong>LLMR.shiny</strong>, the shared GUI
+infrastructure that ships with the GUI packages and is not used directly.
+Its components supply the provider sidebar, key handling, usage accounting,
+demo/live runners, and display adapters.</p>
 
 <h2>Install</h2>
-<pre><code>install.packages("LLMR")                   # CRAN
+<pre><code>install.packages(c("LLMR", "LLMR.shiny"))  # CRAN
 
-# the rest, from GitHub:
+# the research packages not yet on CRAN, from GitHub:
 remotes::install_github("asanaei/LLMRagent")
 remotes::install_github("asanaei/LLMRcontent")
 remotes::install_github("asanaei/LLMRpanel")
 remotes::install_github("asanaei/FocusGroup")
-
-# the GUIs ship inside the packages above (run_*_studio()); install the
-# shared Shiny components alongside them:
-remotes::install_github("asanaei/LLMR.shiny")
 </code></pre>
 
 <footer>

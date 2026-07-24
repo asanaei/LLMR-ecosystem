@@ -1,6 +1,6 @@
 # The LLMR Ecosystem
 
-> R packages for LLM-assisted research: one provider layer (LLMR) and a
+> R packages for LLM-assisted research: one provider interface (LLMR) and a
 > methodology stack built on it. Each package ships a compact usage capsule
 > written for AI assistants: exact signatures, the canonical workflow, the
 > offline test seam, the rules that make the method valid, and what its
@@ -9,10 +9,11 @@
 
 ## Usage capsules
 
-- [LLMR](https://asanaei.github.io/LLMR/ai/LLMR.md): unified provider layer -- configs, calls, structured output, tools, streaming, logprobs, embeddings, tidy verbs, parallel/batch execution, logging, agreement, cost.
+- [LLMR](https://asanaei.github.io/LLMR/ai/LLMR.md): common provider interface -- chat and embeddings across many providers, one configuration and call interface, tidy verbs, parallel/batch execution, structured output, tools, streaming, audit logging, and request hashing.
 - [LLMRagent](https://asanaei.github.io/LLMRagent/ai/LLMRagent.md): agents with personas, tools, memory, hard budgets; delegation; multi-agent designs; experiments; orchestration.
 - [LLMRcontent](https://asanaei.github.io/LLMRcontent/ai/LLMRcontent.md): LLM-assisted content analysis -- codebook-first annotation with sealed gold validation, locked protocols, tournaments, corpus coding and error-corrected prevalences; measurement-multiverse robustness audits with a fragility index; and verifiable replication archives from audit logs (sealing, completeness linting, redaction, verifiability horizons).
-- [LLMRpanel](https://asanaei.github.io/LLMRpanel/ai/LLMRpanel.md): calibrated silicon samples -- persona panels, instruments, conjoint/vignette designs, coverage-aware calibration, bias audits.
+- [LLMRpanel](https://asanaei.github.io/LLMRpanel/ai/LLMRpanel.md): Likert, choice, open-response, and conjoint instruments administered to panels of model personas, with respondent-level randomization and comparison of response shares against a human benchmark.
+- [FocusGroup](https://asanaei.github.io/FocusGroup/ai/FocusGroup.md): simulated moderated group discussions among model agents, with turn-taking rules and continuation experiments (vary one turn, measure the next).
 
 ## Per-package documentation indexes
 
@@ -20,6 +21,7 @@
 - [LLMRagent llms.txt](https://asanaei.github.io/LLMRagent/llms.txt)
 - [LLMRcontent llms.txt](https://asanaei.github.io/LLMRcontent/llms.txt)
 - [LLMRpanel llms.txt](https://asanaei.github.io/LLMRpanel/llms.txt)
+- [FocusGroup llms.txt](https://asanaei.github.io/FocusGroup/llms.txt)
 
 ## Notes for assistants
 
