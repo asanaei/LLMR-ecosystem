@@ -55,6 +55,9 @@
     padding: 1.15rem 1.25rem; display: flex; flex-direction: column;
   }
   .card h3 { margin: 0 0 .3rem; font-size: 1.06rem; color: var(--navy); }
+  .card .head { display: flex; align-items: center; gap: .6rem; margin-bottom: .3rem; }
+  .card .head img { width: 46px; height: auto; flex: 0 0 auto; }
+  .card .head h3 { margin: 0; }
   .card .status { font-size: .74rem; letter-spacing: .05em; text-transform: uppercase;
     color: var(--muted); margin-bottom: .55rem; }
   .card .status.cran { color: #2e7d4f; }
@@ -151,7 +154,7 @@ objects, and scope.</p>
 <div class="grid">
 
   <div class="card">
-    <h3>LLMR</h3>
+    <div class="head"><img src="img/LLMR.png" alt="" aria-hidden="true"><h3>LLMR</h3></div>
     <div class="status cran">CRAN</div>
     <p>LLMR provides one configuration and calling interface for hosted and
     local language models. The same functions serve chat and embedding models
@@ -161,7 +164,7 @@ objects, and scope.</p>
   </div>
 
   <div class="card">
-    <h3>LLMRagent</h3>
+    <div class="head"><img src="img/LLMRagent.png" alt="" aria-hidden="true"><h3>LLMRagent</h3></div>
     <div class="status">GitHub; CRAN submission imminent</div>
     <p>LLMRagent constructs language-model agents with personas, tools, memory,
     and budgets. It coordinates agents through delegation, fixed pipelines,
@@ -171,7 +174,7 @@ objects, and scope.</p>
   </div>
 
   <div class="card">
-    <h3>LLMRcontent</h3>
+    <div class="head"><img src="img/LLMRcontent.png" alt="" aria-hidden="true"><h3>LLMRcontent</h3></div>
     <div class="status">GitHub; CRAN submission imminent</div>
     <p>LLMRcontent codes text from a specified codebook and evaluates the coding
     against held-out human labels. It compares estimates across measurement
@@ -181,7 +184,7 @@ objects, and scope.</p>
   </div>
 
   <div class="card">
-    <h3>LLMRpanel</h3>
+    <div class="head"><img src="img/LLMRpanel.png" alt="" aria-hidden="true"><h3>LLMRpanel</h3></div>
     <div class="status">GitHub; CRAN submission imminent</div>
     <p>LLMRpanel administers survey and experimental instruments to panels of
     model personas. It supports Likert, choice, open-response, and conjoint
@@ -192,7 +195,7 @@ objects, and scope.</p>
   </div>
 
   <div class="card">
-    <h3>FocusGroup</h3>
+    <div class="head"><img src="img/FocusGroup.png" alt="" aria-hidden="true"><h3>FocusGroup</h3></div>
     <div class="status">GitHub; CRAN submission imminent</div>
     <p>FocusGroup runs moderated discussions among language-model agents and
     supports experiments that vary one turn and measure the next response. Its
@@ -203,19 +206,6 @@ objects, and scope.</p>
   </div>
 
 </div>
-
-<h2>Reproducibility principles</h2>
-<ul class="principles">
-  <li><strong>Validation inputs.</strong> LLMRcontent uses codebooks, gold sets,
-  and model comparisons in its measurement workflow.</li>
-  <li><strong>Audit records.</strong> LLMR logs model calls, and LLMRcontent
-  builds hash-sealed archives from those logs.</li>
-  <li><strong>Result diagnostics.</strong> Results retain test-split
-  evaluations, panel benchmark status, and fragility measures.</li>
-  <li><strong>Local execution.</strong> Validation and audit methods can use
-  local open-weight models. When local models are used, restricted text remains
-  on the host machine.</li>
-</ul>
 
 <h2>Point-and-click</h2>
 <p>Three of the packages ship a Shiny front end, so the same workflows run
@@ -237,6 +227,19 @@ and include an offline demonstration mode.</p>
 infrastructure that ships with the GUI packages and is not used directly.
 Its components supply the provider sidebar, key handling, usage accounting,
 demo/live runners, and display adapters.</p>
+
+<h2>Reproducibility principles</h2>
+<ul class="principles">
+  <li><strong>Validation inputs.</strong> LLMRcontent uses codebooks, gold sets,
+  and model comparisons in its measurement workflow.</li>
+  <li><strong>Audit records.</strong> LLMR logs model calls, and LLMRcontent
+  builds hash-sealed archives from those logs.</li>
+  <li><strong>Result diagnostics.</strong> Results retain test-split
+  evaluations, panel benchmark status, and fragility measures.</li>
+  <li><strong>Local execution.</strong> Validation and audit methods can use
+  local open-weight models. When local models are used, restricted text remains
+  on the host machine.</li>
+</ul>
 
 <h2>Install</h2>
 <pre><code>install.packages(c("LLMR", "LLMR.shiny"))  # CRAN
