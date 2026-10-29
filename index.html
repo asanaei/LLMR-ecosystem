@@ -165,7 +165,7 @@ objects, and scope.</p>
 
   <div class="card">
     <div class="head"><img src="img/LLMRagent.png" alt="" aria-hidden="true"><h3>LLMRagent</h3></div>
-    <div class="status">GitHub; CRAN submission imminent</div>
+    <div class="status cran">CRAN</div>
     <p>LLMRagent constructs language-model agents with personas, tools, memory,
     and budgets. It coordinates agents through delegation, fixed pipelines,
     shared conversations, and factorial experiments.</p>
@@ -175,7 +175,7 @@ objects, and scope.</p>
 
   <div class="card">
     <div class="head"><img src="img/LLMRcontent.png" alt="" aria-hidden="true"><h3>LLMRcontent</h3></div>
-    <div class="status">GitHub; CRAN submission imminent</div>
+    <div class="status">GitHub</div>
     <p>LLMRcontent codes text from a specified codebook and evaluates the coding
     against held-out human labels. It compares estimates across measurement
     choices and builds replication archives from LLMR audit logs.</p>
@@ -185,7 +185,7 @@ objects, and scope.</p>
 
   <div class="card">
     <div class="head"><img src="img/LLMRpanel.png" alt="" aria-hidden="true"><h3>LLMRpanel</h3></div>
-    <div class="status">GitHub; CRAN submission imminent</div>
+    <div class="status cran">CRAN</div>
     <p>LLMRpanel administers survey and experimental instruments to panels of
     model personas. It supports Likert, choice, open-response, and conjoint
     instruments, respondent-level randomization, and comparison against a
@@ -196,7 +196,7 @@ objects, and scope.</p>
 
   <div class="card">
     <div class="head"><img src="img/FocusGroup.png" alt="" aria-hidden="true"><h3>FocusGroup</h3></div>
-    <div class="status">GitHub; CRAN submission imminent</div>
+    <div class="status cran">CRAN</div>
     <p>FocusGroup runs moderated discussions among language-model agents and
     supports experiments that vary one turn and measure the next response. Its
     Shiny interface (<code>run_focus_studio()</code>) runs sessions and supports
@@ -242,13 +242,9 @@ demo/live runners, and display adapters.</p>
 </ul>
 
 <h2>Install</h2>
-<pre><code>install.packages(c("LLMR", "LLMR.shiny"))  # CRAN
+<pre><code>install.packages(c("LLMR", "LLMRagent", "LLMRpanel", "FocusGroup", "LLMR.shiny"))  # CRAN
 
-# the research packages not yet on CRAN, from GitHub:
-remotes::install_github("asanaei/LLMRagent")
-remotes::install_github("asanaei/LLMRcontent")
-remotes::install_github("asanaei/LLMRpanel")
-remotes::install_github("asanaei/FocusGroup")
+remotes::install_github("asanaei/LLMRcontent")  # GitHub
 </code></pre>
 
 <footer>
